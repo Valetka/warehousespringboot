@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<p th:text="${com.warehouse.warehousespringboot.models.Employee.getName() + ', ' + com.warehouse.warehousespringboot.models.Employee.getSurname()}">VALUE</p>
+<p th:text="${'Password: ' + com.warehouse.warehousespringboot.models.Employee.getPassword()}">VALUE</p>
+<p th:text="${com.warehouse.warehousespringboot.models.Employee.getId()}">VALUE</p>
+
+<a th:href="@{manage/employees/{id}/edit(id=${com.warehouse.warehousespringboot.models.Employee.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{manage/employees/{id}(id=${com.warehouse.warehousespringboot.models.Employee.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

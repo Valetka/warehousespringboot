@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<div th:each="employee : ${templates.manage.employees}">
+    <a th:href="@{/employee/{id}(id=${com.warehouse.warehousespringboot.models.Employee.getId()})}"
+       th:text="${com.warehouse.warehousespringboot.models.Employee.getName() + ', ' + com.warehouse.warehousespringboot.models.Employee.getSurname()}">user</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/manage/employees/new">Create new employee</a>
+
+</body>
+</html>
